@@ -206,57 +206,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-Linux中find常见用法示例" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/28/Linux中find常见用法示例/" class="article-date">
-  	<time datetime="2016-06-28T08:14:12.342Z" itemprop="datePublished">2016-06-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: Linux��find�����÷�ʾ��<br>Linux��find�����÷�ʾ��</p>
-<p>��find   path   -option   [   -print ]   [ -exec   -ok   command ]   {} \;</p>
-<p>find�����Ĳ�����<br>pathname: find���������ҵ�Ŀ¼·����������.����ʾ��ǰĿ¼����/����ʾϵͳ��Ŀ¼��<br>-print�� find���ƥ�����ļ���������׼������<br>-exec�� find������ƥ�����ļ�ִ�иò�����������shell�����Ӧ��������ʽΪ’command’ { } \;��ע��{ }��\��֮���Ŀո���<br>-ok�� ��-exec��������ͬ��ֻ������һ�ָ�Ϊ��ȫ��ģʽ��ִ�иò�����������shell�����ִ��ÿһ������֮ǰ������������ʾ�����û���ȷ���Ƿ�ִ�С�</p>
-<p>#-print �����ҵ����ļ���������׼����</p>
-<p>#-exec   command   {} \;      ���C���鵽���ļ�ִ��command����,{} �� \;֮���пո�</p>
-<p>#-ok ��-exec��ͬ��ֻ�����ڲ���ǰҪѯ�û�</p>
-<h1 id="����find-name-svn-xargs-rm-rf"><a href="#����find-name-svn-xargs-rm-rf" class="headerlink" title="����find . -name .svn | xargs rm -rf"></a>����find . -name .svn | xargs rm -rf</h1><p>-name   filename             #������Ϊfilename���ļ�<br>-perm                        #��ִ��Ȩ��������<br>-user    username             #���ļ�����������<br>-group groupname            #����������<br>-mtime   -n +n                #���ļ�����ʱ���������ļ���-nָn�����ڣ�+nָn����ǰ<br>-atime    -n +n               #���ļ�����ʱ������GIN: 0px”&gt;<br>-ctime    -n +n              #���ļ�����ʱ���������ļ���-nָn�����ڣ�+nָn����ǰ<br>-nogroup                     #������Ч�������ļ������ļ���������/etc/groups�в�����<br>-nouser                     #������Ч�������ļ������ļ���������/etc/passwd�в���<br>-newer   f1 !f2              ���ļ���-nָn�����ڣ�+nָn����ǰ<br>-ctime    -n +n               #���ļ�����ʱ���������ļ���-nָn�����ڣ�+nָn����ǰ<br>-nogroup                     #������Ч�������ļ������ļ���������/etc/groups�в�����<br>-nouser                      #������Ч�������ļ������ļ���������/etc/passwd�в���<br>-newer   f1 !f2               #������ʱ����f1�µ���f2�ɵ��ļ�<br>-type    b/d/c/p/l/f         #���ǿ��豸��Ŀ¼���ַ��豸���ܵ����������ӡ���ͨ�ļ�<br>-size      n[c]               #�鳤��Ϊn��[��n�ֽ�]���ļ�<br>-depth                       #ʹ�����ڽ�����Ŀ¼ǰ���в����걾Ŀ¼<br>-fstype                     #������ʱ����f1�µ���f2�ɵ��ļ�<br>-type    b/d/c/p/l/f         #���ǿ��豸��Ŀ¼���ַ��豸���ܵ����������ӡ���ͨ�ļ�<br>-size      n[c]               #�鳤��Ϊn��[��n�ֽ�]���ļ�<br>-depth                       #ʹ�����ڽ�����Ŀ¼ǰ���в����걾Ŀ¼<br>-fstype                      #��λ��ĳһ�����ļ�ϵͳ�е��ļ�����Щ�ļ�ϵͳ����ͨ���� ��/etc/fstab���ҵ�<br>-mount                       #���ļ�ʱ����Խ�ļ�ϵͳmount��<br>-follow                      #�����������������ļ����͸���������ָ���ļ�<br>-cpio                %;      #��λ��ĳһ�����ļ�ϵͳ�е��ļ�����Щ�ļ�ϵͳ����ͨ���� ��/etc/fstab���ҵ�<br>-mount                       #���ļ�ʱ����Խ�ļ�ϵͳmount��<br>-follow                      #�����������������ļ����͸���������ָ���ļ�<br>-cpio                        #��ƥ�����ļ�ʹ��cpio��������Ǳ��ݵ��Ŵ��豸��</p>
-<h1 id="prune-����ĳ��L¼"><a href="#prune-����ĳ��L¼" class="headerlink" title="-prune                       #����ĳ��Ŀ¼"></a>-prune                       #����ĳ��Ŀ¼</h1><p>$find   ~   -name   “<em>.txt”   -print    #��$HOME�в�.txt�ļ�����ʾ<br>$find   .    -name   “</em>.txt”   -print<br>$find   .    -name   “[A-Z]<em>“   -print   #���Դ�д��ĸ��ͷ���ļ�<br>$find   /etc   -name   “host</em>“   -print #����host��ͷ���ļ�<br>$find   .   -name   “[a-z][a-z][0�C9][0�C9].txt”    -print   #��������Сд��ĸ���������ֿ�ͷ��txt�ļ�<br>$find .   -perm   755   -print<br>$find   .   -perm -007   -exec ls -l {} \;   #�������û����ɶ�дִ�е��ļ�ͬ-perm 777<br>$find   . -type d   -print<br>$find   .   !   -type   d   -print<br>$find   .   -type l   -print<br>$find   .   -size   +1000000c   -print        #�鳤�ȴ���1Mb���ļ�<br>$find   .   -size   100c         -print       # �鳤��Ϊ100c���ļ�<br>$find   .   -size   +10   -print              #�鳤�ȳ���������10�����ļ���1��=512�ֽڣ�<br>$cd /<br>$find   etc   home   apps    -depth   -print   | cpio   -ivcdC65536   -o   /dev/rmt0<br>$find   /etc -name “passwd<em>“   -exec grep   “cnscn”   {}   \;   #���Ƿ�����cnscn�û�<br>$find . -name “yao</em>“   | xargs file<br>$find   . -name “yao*”   |   xargs   echo    “” &gt; /tmp/core.log</p>
-<h1 id="find-name-“yao-”-xargs-chmod-o-w"><a href="#find-name-“yao-”-xargs-chmod-o-w" class="headerlink" title="$find   . -name “yao*”   | xargs   chmod   o-w"></a>$find   . -name “yao*”   | xargs   chmod   o-w</h1><p>find   -name april<em>                     �ڵ�ǰĿ¼�²�����april��ʼ���ļ�<br>find   -name   april</em>   fprint file        �ڵ�ǰĿ¼�²�����april��ʼ���ļ������ѽ���������file��<br>find   -name ap<em> -o -name may</em>   ������ap��may��ͷ���ļ�<br>find   /mnt   -name tom.txt   -ftype vfat   ��/mnt�²�������Ϊtom.txt���ļ�ϵͳ����Ϊvfat���ļ�<br>find   /mnt   -name t.txt ! -ftype vfat   ��/mnt�²�������Ϊtom.txt���ļ�ϵͳ���Ͳ�Ϊvfat���ļ�<br>find   /tmp   -name wa* -type l            ��/tmp�²�����Ϊwa��ͷ������Ϊ�������ӵ��ļ�<br>find   /home   -mtime   -2                 ��/home�²����������ڸĶ������ļ�<br>find /home    -atime -1                  ��1��֮�ڱ���ȡ�����ļ�<br>find /home -mmin    +60                  ��/home�²�60����ǰ�Ķ������ļ�<br>find /home   -amin   +30                  ������30����ǰ����ȡ�����ļ�<br>find /home   -newer   tmp.txt             ��/home�²�����ʱ����tmp.txt�����ļ���Ŀ¼<br>find /home   -anewer   tmp.txt            ��/home�²���ȡʱ����tmp.txt�����ļ���Ŀ¼<br>find   /home   -used   -2                  �г��ļ���Ŀ¼���Ķ���֮������2���ڱ���ȡ�����ļ���Ŀ¼<br>find   /home   -user cnscn                �г�/homeĿ¼�������û�cnscn���ļ���Ŀ¼<br>find   /home   -uid   +501                  �г�/homeĿ¼���û���ʶ��������501���ļ���Ŀ¼<br>find   /home   -group   cnscn              �г�/home����Ϊcnscn���ļ���Ŀ¼<br>find   /home   -gid 501                   �г�/home����idΪ501���ļ���Ŀ¼<br>find   /home   -nouser                    �г�/home�ڲ����ڱ����û����ļ���Ŀ¼<br>find   /home   -nogroup                   �г�/home�ڲ����ڱ��������ļ���Ŀ¼<br>find   /home    -name tmp.txt    -maxdepth   4   �г�/home�ڵ�tmp.txt ��ʱ��������Ϊ3��<br>find   /home   -name tmp.txt   -mindepth   3   �ӵ�2�㿪ʼ��<br>find   /home   -empty                     ���Ҵ�СΪ0���ļ�����Ŀ¼<br>find   /home   -size   +512k                ������512k���ļ�<br>find   /home   -size   -512k               ��С��512k���ļ�<br>find   /home   -links   +2                ��Ӳ����������2���ļ���Ŀ¼<br>find   /home   -perm   0700                ��Ȩ��Ϊ700���ļ���Ŀ¼<br>find   /tmp   -name tmp.txt   -exec cat {} \;<br>find   /tmp   -name   tmp.txt   -ok   rm {} \;<br>find    /   -amin    -10     # ������ϵͳ������10���ӷ��ʵ��ļ�<br>find    /   -atime   -2        # ������ϵͳ������48Сʱ���ʵ��ļ�<br>find    /   -empty             # ������ϵͳ��Ϊ�յ��ļ������ļ���<br>find    /   -group   cat        # ������ϵͳ������ groupcat���ļ�<br>find    /   -mmin   -5         # ������ϵͳ������5�������޸Ĺ����ļ�<br>find    /   -mtime   -1       #������ϵͳ������24Сʱ���޸Ĺ����ļ�<br>find    /   -nouser           #������ϵͳ�����������û����ļ�<br>find    /   -user    fred     #������ϵͳ������FRED�����û����ļ�</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-hexo搭建教程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
