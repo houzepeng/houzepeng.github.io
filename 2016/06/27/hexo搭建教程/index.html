@@ -1,120 +1,250 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>hexo搭建教程 | hzp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="hzp">
-    
-    <meta name="description" content="Hexo简介hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的@tommy351。
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>hexo搭建教程 | hzp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hexo简介hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的@tommy351。
 A fast, simple &amp;amp; powerful blog framework, powered by Node.js.为什么我要使用Hexo:
-之前使用过CSDN,博客园和jekyll博客,其中前两个不能算是这个博客吧,主要是使用别的提供的平台发博文,第三个jekyll,我记得是Ruby语言写的,是Github Page着力推荐的, 但其中有繁琐的git操作, 而且有一些资源加载的问题(主要是我不太懂Ruby)最近在学习JS后端Node.js, 现在火的不行, 异步IO的机制, 所以在学习过程中发现了HexoHexo更加简单优雅, 而且风格多变, 适合程序员搭建个人博客,而且支持多平台的搭建使用的软硬件Mac Pro    #软件的安装基本都是基于brewNode.js    #v0.10.33npm        #2.1.6 包管理,类似于Python中的pip下面正式讲述如何部署:
-
-Git安装和Github设置使用Mac电脑可以直brew安装,
-
-brew install git         #Mac电脑使用brew安装sudo apt-get install git #Ubuntu系统使用这条命令安装git操作和github上SSH设置请看这篇博文
-使用Github Page搭建博客, 需要遵循一定的规则, 需要在github建立仓库,仓库名为Github用户.github.io, 更多详情请参考官方文档
-
-Node.js安装mac电脑可以直接通过brew安装
-
-#安装命令brew install node  #如果我没记错的话,最新版的node.js的包中已经集成了npm包管理工具
-使用以下命令验证是否安装成功node -vnpm -vNode.js的详细内容请参考Node.js学习笔记
-
-Hexo安装与设置Node, npm和Git都安装成功, 开始安装hexo,
-
-npm install hexo -g  #-g表示全局安装, npm默认为当前项目安装Hexo使用命令:
-hexo init   #执行init命令初始化hexo到你指定的目录hexo generate       #自动根据当前目录下文件,生成静态网页hexo server         #运行本地服务,浏览器输入http://localhost:4000就可以看到效果。
-
-添加博文hexo new “postName”  #新建博文,其中postName是博文题目博文会自动生成在博客目录下source/_posts\postName.md
-
-#文件自动生成格式:title: “It Starts with iGaze: Visual Attention Driven Networkingwith Smart Glasses”  #博文题目date: 2014-11-21 11:25:38      #生成时间
-tags: Paper                    #标签, 多个标签使用格式[Paper1, Paper2, Paper3,…]如果不想博文在首页全部显示, 并能出现阅读全文按钮效果, 需要在你想在首页显示的部分下添加">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
+之前使用过CSDN,博客园和jekyll博客,其中前两个不能算是这个博客吧,主要是使用别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo搭建教程">
+<meta property="og:url" content="http://yoursite.com/2016/06/27/hexo搭建教程/index.html">
+<meta property="og:site_name" content="hzp">
+<meta property="og:description" content="Hexo简介hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的@tommy351。
+A fast, simple &amp;amp; powerful blog framework, powered by Node.js.为什么我要使用Hexo:
+之前使用过CSDN,博客园和jekyll博客,其中前两个不能算是这个博客吧,主要是使用别">
+<meta property="og:updated_time" content="2016-06-27T07:43:55.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo搭建教程">
+<meta name="twitter:description" content="Hexo简介hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的@tommy351。
+A fast, simple &amp;amp; powerful blog framework, powered by Node.js.为什么我要使用Hexo:
+之前使用过CSDN,博客园和jekyll博客,其中前两个不能算是这个博客吧,主要是使用别">
+  
+    <link rel="alternative" href="/atom.xml" title="hzp" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="hzp" title="hzp"/></a>
-			</div>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
 			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="hzp">hzp</a></h1>
-				<h2 class="blog-motto"></h2>
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">hzp</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
 					
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/atom.xml">Rss</a></li>
-					
-						<li><a href="/sitemap.xml">Sitemap</a></li>
-					
-						<li><a href="/tags">标签</a></li>
-					
-						<li><a href="/about">关于我们</a></li>
-					
-					<li>
-					
-					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
 </div>
 
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">hzp</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">hzp</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-hexo搭建教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/27/hexo搭建教程/" class="article-date">
+  	<time datetime="2016-06-27T07:42:48.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
     
-      <a href="/2016/06/27/hexo搭建教程/" title="hexo搭建教程" itemprop="url">hexo搭建教程</a>
-  </h1>
-  <p class="article-author">By
+      <input type="hidden" class="isFancy" />
     
-      <a href="http://yoursite.com" title="hzp">hzp</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2016-06-27T07:42:48.000Z" itemprop="datePublished">2016-06-27</time>
-    更新日期:<time datetime="2016-06-27T07:43:55.971Z" itemprop="dateModified">2016-06-27</time>
     
-  </p>
-</header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-Paper-标签-多个标签使用格式-Paper1-Paper2-Paper3-…"><span class="toc-number">1.</span> <span class="toc-text">tags: Paper                    #标签, 多个标签使用格式[Paper1, Paper2, Paper3,…]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-Configuration"><span class="toc-number"></span> <span class="toc-text">Hexo Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docs-http-hexo-io-docs-configuration-html"><span class="toc-number">1.</span> <span class="toc-text">Docs: http://hexo.io/docs/configuration.html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Source-https-github-com-hexojs-hexo"><span class="toc-number">2.</span> <span class="toc-text">Source: https://github.com/hexojs/hexo/</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Site"><span class="toc-number"></span> <span class="toc-text">Site</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#URL"><span class="toc-number"></span> <span class="toc-text">URL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘"><span class="toc-number">1.</span> <span class="toc-text">If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Directory"><span class="toc-number"></span> <span class="toc-text">Directory</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Writing-设置生成博文的默认格式-不修改"><span class="toc-number"></span> <span class="toc-text">Writing, 设置生成博文的默认格式,不修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Category-amp-Tag"><span class="toc-number"></span> <span class="toc-text">Category & Tag</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Archives"><span class="toc-number"></span> <span class="toc-text">Archives</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Enable-pagination"><span class="toc-number">1.</span> <span class="toc-text">2: Enable pagination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Disable-pagination"><span class="toc-number">2.</span> <span class="toc-text">1: Disable pagination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Fully-Disable"><span class="toc-number">3.</span> <span class="toc-text">0: Fully Disable</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Server服务器设置-不修改"><span class="toc-number"></span> <span class="toc-text">Server服务器设置, 不修改</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-uses-Connect-as-a-server"><span class="toc-number">1.</span> <span class="toc-text">Hexo uses Connect as a server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#You-can-customize-the-logger-format-as-defined-in"><span class="toc-number">2.</span> <span class="toc-text">You can customize the logger format as defined in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-www-senchalabs-org-connect-logger-html"><span class="toc-number">3.</span> <span class="toc-text">http://www.senchalabs.org/connect/logger.html</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Date-Time-format-日期格式"><span class="toc-number"></span> <span class="toc-text">Date / Time format 日期格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-uses-Moment-js-to-parse-and-display-date"><span class="toc-number">1.</span> <span class="toc-text">Hexo uses Moment.js to parse and display date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#You-can-customize-the-date-format-as-defined-in"><span class="toc-number">2.</span> <span class="toc-text">You can customize the date format as defined in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-momentjs-com-docs-displaying-format"><span class="toc-number">3.</span> <span class="toc-text">http://momentjs.com/docs/#/displaying/format/</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pagination-分页-设置每页显示多少篇博文"><span class="toc-number"></span> <span class="toc-text">Pagination 分页, 设置每页显示多少篇博文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Set-per-page-to-0-to-disable-pagination"><span class="toc-number">1.</span> <span class="toc-text">Set per_page to 0 to disable pagination</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Disqus-disqus评论-与多说类似-国内一般使用多说"><span class="toc-number"></span> <span class="toc-text">Disqus  disqus评论,  与多说类似, 国内一般使用多说</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Extensions"><span class="toc-number"></span> <span class="toc-text">Extensions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugins-https-github-com-hexojs-hexo-wiki-Plugins"><span class="toc-number">1.</span> <span class="toc-text">Plugins: https://github.com/hexojs/hexo/wiki/Plugins</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Themes-https-github-com-hexojs-hexo-wiki-Themes"><span class="toc-number">2.</span> <span class="toc-text">Themes: https://github.com/hexojs/hexo/wiki/Themes</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deployment-站点部署到github要配置这里-非常重要"><span class="toc-number"></span> <span class="toc-text">Deployment  站点部署到github要配置这里, 非常重要</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docs-http-hexo-io-docs-deployment-html"><span class="toc-number">1.</span> <span class="toc-text">Docs: http://hexo.io/docs/deployment.html</span></a></li></ol>
-		</div>
-		
-		<p>Hexo简介<br>hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的@tommy351。</p>
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo搭建教程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexo简介<br>hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。作者是来自台湾的@tommy351。</p>
 <p>A fast, simple &amp; powerful blog framework, powered by Node.js.<br>为什么我要使用Hexo:</p>
 <p>之前使用过CSDN,博客园和jekyll博客,其中前两个不能算是这个博客吧,主要是使用别的提供的平台发博文,第三个jekyll,我记得是Ruby语言写的,是Github Page着力推荐的, 但其中有繁琐的git操作, 而且有一些资源加载的问题(主要是我不太懂Ruby)<br>最近在学习JS后端Node.js, 现在火的不行, 异步IO的机制, 所以在学习过程中发现了Hexo<br>Hexo更加简单优雅, 而且风格多变, 适合程序员搭建个人博客,而且支持多平台的搭建<br>使用的软硬件<br>Mac Pro    #软件的安装基本都是基于brew<br>Node.js    #v0.10.33<br>npm        #2.1.6 包管理,类似于Python中的pip<br>下面正式讲述如何部署:</p>
 <ol>
@@ -170,225 +300,132 @@ tags: Paper                    #标签, 多个标签使用格式[Paper1, Paper2,
 </ul>
 <p>#表示部署成功<br>可以使用Github用户名.github.io进行访问, 或者设置个性域名</p>
 <p>文／Andrew_liu（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/858ecf233db9" target="_blank" rel="external">http://www.jianshu.com/p/858ecf233db9</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
-  
-	</div>
-		<footer class="article-footer clearfix">
 
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2016/06/27/hexo搭建教程/" data-title="hexo搭建教程 | hzp" data-tsina="null" class="share clearfix">
+      
+    </div>
+    
   </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
-
-<div class="next">
-<a href="/2016/06/27/My-New-Post/"  title="My New Post">
- <strong>NEXT:</strong><br/> 
- <span>My New Post
-</span>
-</a>
-</div>
-
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/27/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">My New Post</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
 </nav>
 
-	
-<section class="comment">
-	<div class="ds-thread"></div>
-</section>
-
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-Paper-标签-多个标签使用格式-Paper1-Paper2-Paper3-…"><span class="toc-number">1.</span> <span class="toc-text">tags: Paper                    #标签, 多个标签使用格式[Paper1, Paper2, Paper3,…]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-Configuration"><span class="toc-number"></span> <span class="toc-text">Hexo Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docs-http-hexo-io-docs-configuration-html"><span class="toc-number">1.</span> <span class="toc-text">Docs: http://hexo.io/docs/configuration.html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Source-https-github-com-hexojs-hexo"><span class="toc-number">2.</span> <span class="toc-text">Source: https://github.com/hexojs/hexo/</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Site"><span class="toc-number"></span> <span class="toc-text">Site</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#URL"><span class="toc-number"></span> <span class="toc-text">URL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘"><span class="toc-number">1.</span> <span class="toc-text">If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Directory"><span class="toc-number"></span> <span class="toc-text">Directory</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Writing-设置生成博文的默认格式-不修改"><span class="toc-number"></span> <span class="toc-text">Writing, 设置生成博文的默认格式,不修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Category-amp-Tag"><span class="toc-number"></span> <span class="toc-text">Category & Tag</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Archives"><span class="toc-number"></span> <span class="toc-text">Archives</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Enable-pagination"><span class="toc-number">1.</span> <span class="toc-text">2: Enable pagination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Disable-pagination"><span class="toc-number">2.</span> <span class="toc-text">1: Disable pagination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Fully-Disable"><span class="toc-number">3.</span> <span class="toc-text">0: Fully Disable</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Server服务器设置-不修改"><span class="toc-number"></span> <span class="toc-text">Server服务器设置, 不修改</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-uses-Connect-as-a-server"><span class="toc-number">1.</span> <span class="toc-text">Hexo uses Connect as a server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#You-can-customize-the-logger-format-as-defined-in"><span class="toc-number">2.</span> <span class="toc-text">You can customize the logger format as defined in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-www-senchalabs-org-connect-logger-html"><span class="toc-number">3.</span> <span class="toc-text">http://www.senchalabs.org/connect/logger.html</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Date-Time-format-日期格式"><span class="toc-number"></span> <span class="toc-text">Date / Time format 日期格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-uses-Moment-js-to-parse-and-display-date"><span class="toc-number">1.</span> <span class="toc-text">Hexo uses Moment.js to parse and display date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#You-can-customize-the-date-format-as-defined-in"><span class="toc-number">2.</span> <span class="toc-text">You can customize the date format as defined in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-momentjs-com-docs-displaying-format"><span class="toc-number">3.</span> <span class="toc-text">http://momentjs.com/docs/#/displaying/format/</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pagination-分页-设置每页显示多少篇博文"><span class="toc-number"></span> <span class="toc-text">Pagination 分页, 设置每页显示多少篇博文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Set-per-page-to-0-to-disable-pagination"><span class="toc-number">1.</span> <span class="toc-text">Set per_page to 0 to disable pagination</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Disqus-disqus评论-与多说类似-国内一般使用多说"><span class="toc-number"></span> <span class="toc-text">Disqus  disqus评论,  与多说类似, 国内一般使用多说</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Extensions"><span class="toc-number"></span> <span class="toc-text">Extensions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugins-https-github-com-hexojs-hexo-wiki-Plugins"><span class="toc-number">1.</span> <span class="toc-text">Plugins: https://github.com/hexojs/hexo/wiki/Plugins</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Themes-https-github-com-hexojs-hexo-wiki-Themes"><span class="toc-number">2.</span> <span class="toc-text">Themes: https://github.com/hexojs/hexo/wiki/Themes</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deployment-站点部署到github要配置这里-非常重要"><span class="toc-number"></span> <span class="toc-text">Deployment  站点部署到github要配置这里, 非常重要</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docs-http-hexo-io-docs-deployment-html"><span class="toc-number">1.</span> <span class="toc-text">Docs: http://hexo.io/docs/deployment.html</span></a></li></ol>
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-
   
+</article>
 
-  
 
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
 </div>
 
-  
 
-  
 
-  
 
-</aside>
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hexo搭建教程" data-title="hexo搭建教程" data-url="http://yoursite.com/2016/06/27/hexo搭建教程/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
 </div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 hzp
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">houzepeng</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">houzepeng</a> by houzepeng
+      	</div>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<div class="social-font clearfix">
-		
-		
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
-		
-		<a href="http://yoursite.com" target="_blank" title="hzp">hzp</a>
-		
-		</p>
-</div>
+  </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
-        
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
 });
 </script>
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
-
-
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"null"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
-
-
-
-
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-57032437-1', 'auto');  
-ga('send', 'pageview');
-</script>
-
-
-  </body>
+  </div>
+</body>
 </html>
